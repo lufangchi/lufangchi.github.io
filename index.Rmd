@@ -1,0 +1,18 @@
+---
+title: ""
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+
+## About me
+
+- [About me](about.html)
+
+
+## A few plots
+
+- [Emm, here's a hw](about.html)

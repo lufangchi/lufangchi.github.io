@@ -11,7 +11,7 @@
 
 
 
-<title>About me</title>
+<title>plot ny_noaa</title>
 
 <script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -353,73 +353,56 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">About me</h1>
+<h1 class="title toc-ignore">plot ny_noaa</h1>
 
 </div>
 
 
-<p><br />
-<img src="image/mypic.jpg" style="width:30.0%" /><br />
-<br />
-Hi all!<br />
-</p>
-<p>I’m Fangchi Lu, a first-year MS student in Biostatistics at Columbia
-University. I’m actively exploring statistics and data science within
-healthcare and beyond, and I’m also enjoying the search for hidden gems
-around NYC. I’m a total dog person and lucky to have a cute dog named <a
-href="image/mantou1.jpg">Mantou</a>.</p>
-<p><br />
-<br />
-</p>
-<div id="education" class="section level2">
-<h2><strong>EDUCATION</strong></h2>
-<p><strong>Columbia University</strong>            <em>MS in
-Biostatistics</em><br />
-<br />
-<strong>The Chinese University of Hong Kong, Shenzhen</strong>
-           <em>BS in Statistics</em></p>
-<p><br />
-</p>
-</div>
-<div id="experience" class="section level2">
-<h2><strong>EXPERIENCE</strong></h2>
-<p><strong>Bairong, Inc.</strong><br />
-<em>Data Science Intern, Fraud and Credit Risk</em>            May 2024
-- Aug 2024<br />
-</p>
-<ul>
-<li>Automated an ETL pipeline for 25M+ credit records with data
-integrity controls and developed a TabTransformer model, boosting fraud
-detection accuracy by 3%. Enhanced a credit score model with advanced
-features and ensemble methods, increasing F1-score by 5% and delivering
-insights for improved client recommendations.</li>
-</ul>
-<p><br />
-<br />
-</p>
-<p><strong>Shenzhen Research Institute of Big Data</strong><br />
-<em>Healthcare data analyst</em>            Nov 2023 - Apr 2024<br />
-</p>
-<ul>
-<li>Processed TCGA lung cancer data, applying PCA, t-SNE, and Elastic
-Net for key gene identification. Conducted Kaplan-Meier survival
-analysis, revealing significant differences, and used clustering
-techniques to identify patient subgroups, visualizing findings with
-t-SNE and UMAP for clinical interpretation.</li>
-</ul>
-<p><br />
-<br />
-</p>
-<p><strong>Didi Global Inc.</strong><br />
-<em>Data Science Analyst Intern, Customer Insights</em>            Jan
-2022 - Mar 2022 </p>
-<ul>
-<li>Built an ETL pipeline in Hive SQL to enhance churn detection by 15%,
-developed predictive models (AUC 0.79) to identify churn drivers, led
-A/B testing reducing churn by 8%, and created customer segmentation and
-RFM dashboards, increasing GMV by 5%.</li>
-</ul>
-</div>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>library(p8105.datasets)
+library(plotly)</code></pre>
+<pre><code>## 
+## 载入程序包：&#39;plotly&#39;
+## 
+## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     last_plot
+## 
+## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter
+## 
+## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     layout</code></pre>
+<pre class="r"><code>data(&quot;ny_noaa&quot;)</code></pre>
+<pre class="r"><code>summary(ny_noaa)</code></pre>
+<pre><code>##       id                 date                 prcp               snow       
+##  Length:2595176     Min.   :1981-01-01   Min.   :    0.00   Min.   :  -13   
+##  Class :character   1st Qu.:1988-11-29   1st Qu.:    0.00   1st Qu.:    0   
+##  Mode  :character   Median :1997-01-21   Median :    0.00   Median :    0   
+##                     Mean   :1997-01-01   Mean   :   29.82   Mean   :    5   
+##                     3rd Qu.:2005-09-01   3rd Qu.:   23.00   3rd Qu.:    0   
+##                     Max.   :2010-12-31   Max.   :22860.00   Max.   :10160   
+##                                          NA&#39;s   :145838     NA&#39;s   :381221  
+##       snwd            tmax               tmin          
+##  Min.   :   0.0   Length:2595176     Length:2595176    
+##  1st Qu.:   0.0   Class :character   Class :character  
+##  Median :   0.0   Mode  :character   Mode  :character  
+##  Mean   :  37.3                                        
+##  3rd Qu.:   0.0                                        
+##  Max.   :9195.0                                        
+##  NA&#39;s   :591786</code></pre>
 
 
 

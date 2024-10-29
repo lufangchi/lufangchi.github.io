@@ -1,0 +1,21 @@
+---
+title: "plot ny_noaa"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+data("ny_noaa")
+
+```
+
+```{r}
+summary(ny_noaa)
+```
+
+

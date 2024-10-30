@@ -1,5 +1,5 @@
 ---
-title: "Visualization"
+title: "The National Oceanic and Atmospheric Association (NOAA) Data Visualization"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns

@@ -7,12 +7,22 @@ output:
 ---
 
 
+Hi stranger,
+
+Thank you for dropping by my very first website, the one I created for a homework assignment.
+\
+\
+I’m Fangchi Lu, an INTP who’d rather not be online—yet, here we are. Feel free to take a look around (or not).
+\
+\
+For more about me, my dog and about my homework, please visit below : D
+\
+\
+
 ## About me
 
 - [About me](about.html)
 
-\
-\
 \
 
 ## A few plots

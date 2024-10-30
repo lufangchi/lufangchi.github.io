@@ -1,0 +1,117 @@
+---
+title: "Visualization"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(plotly)
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+```{r}
+
+data("ny_noaa")
+ny_noaa_scatter <- ny_noaa %>%
+  filter(!is.na(prcp) & !is.na(snow) & !is.na(snwd) & !is.na(tmax) & !is.na(tmin) & snow > 0 & prcp > 0 & snwd > 0) %>%
+  sample_n(10000) %>%  # Optional sampling for dashboard speed
+  mutate(
+    tmax = as.integer(tmax),
+    tmin = as.integer(tmin)
+  )
+
+# Calculate the 1st and 99th percentiles for snow
+lower_bound <- quantile(ny_noaa_scatter$snow, 0.05, na.rm = TRUE)
+upper_bound <- quantile(ny_noaa_scatter$snow, 0.95, na.rm = TRUE)
+
+ny_noaa_filtered <- ny_noaa_scatter |>
+  filter(snow > lower_bound)|>
+  filter(snow < upper_bound)
+
+prcp_range <- quantile(ny_noaa_filtered$tmin, probs = c(0.05, 0.95), na.rm = TRUE)
+
+```
+
+### Relationship between Snowfall and Snow Depth Colored by Minimum Temperature
+
+
+```{r}
+
+scatter_ggplot = 
+  ny_noaa_filtered |>
+  ggplot(aes(x = snow, y = snwd, color = tmin)) +
+  geom_point(alpha = 0.25) +
+  scale_color_viridis_c(option = "plasma") +  # Choose a vibrant color scale
+  scale_color_gradient(low = "blue", high = "yellow", limits = prcp_range) +
+  coord_cartesian()
+
+ggplotly(scatter_ggplot)
+
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Monthly prcp distribution
+
+```{r}
+
+# Sample data for dashboard speed
+ny_noaa_box <- ny_noaa %>%
+  sample_n(10000)
+
+# Calculate the 1st and 99th percentiles for precipitation
+lower_bound <- quantile(ny_noaa_box$prcp, 0.01, na.rm = TRUE)
+upper_bound <- quantile(ny_noaa_box$prcp, 0.99, na.rm = TRUE)
+
+# Filter out extreme values based on calculated bounds
+ny_noaa_box_filtered <- ny_noaa_box %>%
+  filter(prcp > lower_bound, prcp < upper_bound) %>%
+  mutate(month = month(date, label = TRUE))
+
+# Create the box plot with filtered data
+plot_ly(data = ny_noaa_box_filtered, 
+        x = ~month, 
+        y = ~prcp, 
+        type = "box", 
+        color = ~month) %>%
+  layout(title = "Monthly Precipitation (prcp) Distribution (Filtered)",
+         xaxis = list(title = "Month"),
+         yaxis = list(title = "Precipitation (prcp)"))
+
+```
+
+### Top station IDs
+
+```{r}
+
+# Sample, count, and keep top 30 IDs by count
+ny_noaa_sample <- ny_noaa %>%
+  sample_n(20000) %>%
+  count(id) %>%
+  arrange(desc(n)) %>%
+  slice_max(n, n = 50) %>%  
+  mutate(id = fct_reorder(as.character(id), n))  # Convert id to character and reorder by count
+
+library(RColorBrewer)
+
+plot_ly(data = ny_noaa_sample,
+        x = ~id,
+        y = ~n,
+        color = ~id,
+        type = "bar",
+        colors = colorRampPalette(brewer.pal(9, "Set1"))(50)) %>%
+  layout(title = "Top 50 Station IDs by Frequency in Sampled ny_noaa Data",
+         xaxis = list(title = "Station ID"),
+         yaxis = list(title = "Count"))
+
+
+```

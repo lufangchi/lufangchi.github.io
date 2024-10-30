@@ -18,4 +18,4 @@ output:
 
 ## A few plots
 
-- [Emm, here's flexdashboard for hw4](plot.html)
+- [Emm, here's flexdashboard for hw4](dashboard.html)

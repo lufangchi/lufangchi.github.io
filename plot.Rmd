@@ -1,21 +1,36 @@
 ---
-title: "plot ny_noaa"
+title: "Untitled"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
 ```{r}
-library(tidyverse)
-library(p8105.datasets)
-library(plotly)
-data("ny_noaa")
 
 ```
 
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
 ```{r}
-summary(ny_noaa)
+
 ```
 
+### Chart C
+
+```{r}
+
+```
 

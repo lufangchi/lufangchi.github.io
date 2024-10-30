@@ -12,7 +12,10 @@ output:
 
 - [About me](about.html)
 
+\
+\
+\
 
 ## A few plots
 
-- [Emm, here's a hw](about.html)
+- [Emm, here's flexdashboard for hw4](plot.html)

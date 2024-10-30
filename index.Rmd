@@ -8,7 +8,8 @@ output:
 
 
 Hi stranger,
-
+\
+\
 Thank you for dropping by my very first website, the one I created for a homework assignment.
 \
 \

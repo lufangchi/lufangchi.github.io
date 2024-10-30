@@ -11,7 +11,7 @@ output:
 \
 Hi all!
 \
-
+\
 I’m Fangchi Lu, a first-year MS student in Biostatistics at Columbia University. I’m actively exploring statistics and data science within healthcare and beyond, and I’m also enjoying the search for hidden gems around NYC. I'm a total dog person and lucky to have a cute dog named [Mantou](image/mantou1.jpg).
 
 
@@ -20,12 +20,16 @@ I’m Fangchi Lu, a first-year MS student in Biostatistics at Columbia Universit
 
 ## **EDUCATION**
 
+\
 **Columbia University** <span style="float: right;">2024 - 2026</span> \
 *MS in Biostatistics*
-
+\
+\
 **The Chinese University of Hong Kong, Shenzhen** <span style="float: right;"> 2019 - 2023</span> \
 *BS in Statistics* 
-                                                              
+\
+\
+
 ## **EXPERIENCE**
 **Bairong, Inc.**  
 *Data Science Intern, Fraud and Credit Risk*

@@ -20,22 +20,16 @@ I’m Fangchi Lu, a first-year MS student in Biostatistics at Columbia Universit
 
 ## **EDUCATION**
 
-**Columbia University** 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**Columbia University** <span style="float: right;">2024 - 2026</span> \
 *MS in Biostatistics*
-\
-\
-**The Chinese University of Hong Kong, Shenzhen** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-*BS in Statistics*
 
-\
-
+**The Chinese University of Hong Kong, Shenzhen** <span style="float: right;"> 2019 - 2023</span> \
+*BS in Statistics* 
                                                               
 ## **EXPERIENCE**
 **Bairong, Inc.**  
 *Data Science Intern, Fraud and Credit Risk*
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-May 2024 - Aug 2024\
+<span style="float: right;"> May 2024 - Aug 2024</span> \
 
 - Automated an ETL pipeline for 25M+ credit records with data integrity controls and developed a TabTransformer model, boosting fraud detection accuracy by 3%. Enhanced a credit score model with advanced features and ensemble methods, increasing F1-score by 5% and delivering insights for improved client recommendations.
 
@@ -44,8 +38,7 @@ May 2024 - Aug 2024\
 
 **Shenzhen Research Institute of Big Data**   
 *Healthcare data analyst*
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Nov 2023 - Apr 2024\
+<span style="float: right;"> Nov 2023 - Apr 2024</span> \
 
 - Processed TCGA lung cancer data, applying PCA, t-SNE, and Elastic Net for key gene identification. Conducted Kaplan-Meier survival analysis, revealing significant differences, and used clustering techniques to identify patient subgroups, visualizing findings with t-SNE and UMAP for clinical interpretation.
 
@@ -54,8 +47,7 @@ Nov 2023 - Apr 2024\
 
 **Didi Global Inc.**  
 *Data Science Analyst Intern, Customer Insights* 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Jan 2022 - Mar 2022\ 
+<span style="float: right;"> Jan 2022 - Mar 2022</span> \
 
 - Built an ETL pipeline in Hive SQL to enhance churn detection by 15%, developed predictive models (AUC 0.79) to identify churn drivers, led A/B testing reducing churn by 8%, and created customer segmentation and RFM dashboards, increasing GMV by 5%.
 
